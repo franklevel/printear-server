@@ -51,6 +51,9 @@ var AppController = /** @class */ (function () {
     function AppController(appService) {
         this.appService = appService;
     }
+    AppController.prototype.getStatus = function () {
+        return { message: 'It works!!!' };
+    };
     AppController.prototype.getProductById = function (id, storeId) {
         return this.appService.getProductById(id, storeId);
     };
@@ -64,6 +67,9 @@ var AppController = /** @class */ (function () {
     AppController.prototype.getProducts = function (storeId) {
         return this.appService.getProducts(storeId);
     };
+    __decorate([
+        common_1.Get('/status')
+    ], AppController.prototype, "getStatus");
     __decorate([
         common_1.Get('/product/:storeId/:id'),
         __param(0, common_1.Param('id', common_1.ParseIntPipe)),
