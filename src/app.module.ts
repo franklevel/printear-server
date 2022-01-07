@@ -11,7 +11,7 @@ import { MerchantModule } from './merchant/merchant.module';
     ConfigModule.forRoot(),
     HttpModule,
     MongooseModule.forRoot(
-      'mongodb+srv://printear:printearpwd@cluster0.tfmwp.mongodb.net/printearDatabase?retryWrites=true&w=majority',
+      `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0.tfmwp.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`,
     ),
     MerchantModule,
   ],
