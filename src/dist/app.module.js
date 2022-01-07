@@ -22,7 +22,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 config_1.ConfigModule.forRoot(),
                 axios_1.HttpModule,
-                mongoose_1.MongooseModule.forRoot('mongodb+srv://printear:printearpwd@cluster0.tfmwp.mongodb.net/printearDatabase?retryWrites=true&w=majority'),
+                mongoose_1.MongooseModule.forRoot("mongodb+srv://" + process.env.DATABASE_USER + ":" + process.env.DATABASE_PASSWORD + "@cluster0.tfmwp.mongodb.net/" + process.env.DATABASE_NAME + "?retryWrites=true&w=majority"),
                 merchant_module_1.MerchantModule,
             ],
             controllers: [app_controller_1.AppController],
